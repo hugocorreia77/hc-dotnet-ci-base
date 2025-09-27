@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "**"
+      - "dockerfiles/**"
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile.${{ matrix.version }}
+          file: dockerfiles/Dockerfile.${{ matrix.version }}
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/hc-dotnet-ci-base:${{ matrix.version }}
