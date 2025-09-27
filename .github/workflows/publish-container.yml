@@ -24,6 +24,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: List Docker Files
+        run: |
+          echo "Listing files in 'dockerfiles' folder:"
+          ls -l dockerfiles
+
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
