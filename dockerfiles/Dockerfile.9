@@ -7,6 +7,6 @@ RUN apk add --no-cache \
 RUN rm -rf /var/lib/apt/lists/*
     
 # Definir usuário padrão (opcional, recomendado p/ CI)
-RUN useradd -ms /bin/bash runner
+RUN adduser -D -s /bin/bash runner
 USER runner
 WORKDIR /home/runner
