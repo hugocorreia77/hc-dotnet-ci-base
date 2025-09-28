@@ -2,8 +2,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS base
 
 # Instalar dependências comuns (se necessário)
 RUN apk add --no-cache -y \
-    git curl unzip \
-    && rm -rf /var/lib/apt/lists/*
+    git curl unzip 
+
+RUN rm -rf /var/lib/apt/lists/*
 
 # Definir usuário padrão (opcional, recomendado p/ CI)
 RUN useradd -ms /bin/bash runner
