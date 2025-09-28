@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS base
 
 # Instalar dependências comuns (se necessário)
-RUN apt-get update && apt-get install -y \
-    git curl unzip \
-    && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y \
+#     git curl unzip \
+#     && rm -rf /var/lib/apt/lists/*
 
 # Definir usuário padrão (opcional, recomendado p/ CI)
 RUN useradd -ms /bin/bash runner
